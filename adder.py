@@ -65,8 +65,10 @@ with open(r"members.csv", encoding='UTF-8') as f:  #Enter your file name
 
 chats = []
 last_date = None
-chunk_size = 200
+chunk_size = 500
 groups = []
+
+SLEEP_TIME_2 = 120
 
 result = client(GetDialogsRequest(
     offset_date=last_date,
@@ -101,8 +103,8 @@ n = 0
 
 for user in users:
     n += 1
-    if n % 80 == 0:
-        sleep(60)
+    if n % 200 == 0:
+        time.sleep(60)
     try:
         print("Adding {}".format(user['id']))
         if mode == 1:

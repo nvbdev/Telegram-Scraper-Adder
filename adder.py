@@ -65,7 +65,7 @@ with open(r"members.csv", encoding='UTF-8') as f:  #Enter your file name
 
 chats = []
 last_date = None
-chunk_size = 500
+chunk_size = 200
 groups = []
 
 SLEEP_TIME_2 = 120
